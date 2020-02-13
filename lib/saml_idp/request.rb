@@ -106,7 +106,7 @@ module SamlIdp
       end
 
       if !service_provider.acceptable_response_hosts.include?(response_host)
-        log "No acceptable AssertionConsumerServiceURL (#{response_host}), either configure them via config.service_provider.response_hosts or match to your metadata_url host"
+        log "No acceptable AssertionConsumerServiceURL (#{response_host} in #{service_provider.acceptable_response_hosts.inspect}), either configure them via config.service_provider.response_hosts or match to your metadata_url host"
         return false
       end
 
